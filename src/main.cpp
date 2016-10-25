@@ -959,7 +959,7 @@ void static PruneOrphanBlocks()
 // miner's coin base reward
 int64_t GetProofOfWorkReward(int64_t nHeight, int64_t nFees)
 {
-    int64_t nSubsidy = 0.1 * COIN;
+    int64_t nSubsidy = 0;
 
     if (nHeight == 1)
         nSubsidy = 10000000 * COIN;
@@ -972,11 +972,7 @@ int64_t GetProofOfWorkReward(int64_t nHeight, int64_t nFees)
 // miner's coin stake reward
 int64_t GetProofOfStakeReward(const CBlockIndex* pindexPrev, int64_t nCoinAge, int64_t nFees)
 {
-    int64_t nSubsidy;
-
-    nSubsidy = nCoinAge * COIN_YEAR_REWARD * 33 / (365 * 33 + 8);
-
-    LogPrint("creation", "GetProofOfStakeReward(): create=%s nCoinAge=%d\n", FormatMoney(nSubsidy), nCoinAge);
+    int64_t nSubsidy = nCoinAge * COIN_YEAR_REWARD / 365;
 
     return nSubsidy + nFees;
 }
