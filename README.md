@@ -1,2 +1,2 @@
-WayCoin is a PoS-based cryptocurrency.
+Blackstar is a PoS-based X11 cryptocurrency.
 
