@@ -12,7 +12,7 @@
 #include "uint256.h"
 
 
-static const int nCheckpointSpan = 5;
+static const int nCheckpointSpan = 30;
 
 // ppcoin: sync-checkpoint master key
 std::string CSyncCheckpoint::strMasterPrivKey = "";
